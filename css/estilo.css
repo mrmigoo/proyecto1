@@ -1,0 +1,317 @@
+*
+{
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+body
+{
+  background-image: url(../img/fondo.png);
+
+}
+
+
+.container-registro {
+  text-align: center;
+}
+
+.form-registro {
+  padding-top: 50px;
+  margin: 0 auto;
+}
+
+.contenedor
+{
+  width: 90%;
+}
+
+#logo
+{
+  display: inline-block;
+  margin: 0 auto;
+  width: 40%;
+  padding-top: 17px;
+}
+
+#imglogo
+{
+  border-radius: 50%;
+  display: block;
+	margin: 0 auto;
+	width: 70px;
+}
+#btn-menu
+{
+  display: none;
+}
+.registro
+{
+  float: right;
+  position: relative;
+  top: 27px;
+  right: 17px;
+  width: 50%;
+}
+
+.registro ul li
+{
+  padding: 7px;
+  border-bottom: 1px solid #000;
+  list-style: none;
+
+}
+
+.registro ul li a
+{
+  text-decoration: none;
+  color: #000;
+
+}
+
+header
+{
+  position: relative;
+  top: 27px;
+  background: rgba(204, 255, 153, 0.7);
+  clear: both;
+  z-index: 1000;
+}
+
+header label
+{
+  position: relative;
+  display: block;
+  height: 30px;
+  width: 30px;
+  bottom: 7px;
+  border: 1px solid #000;
+}
+
+header label:hover
+{
+  cursor: pointer;
+  background: rgba(0,0,0,.3);
+}
+
+.menu
+{
+  position: absolute;
+  background: rgba(204, 255, 153, 0.7);;
+  margin: 0 auto;
+  width: 100%;
+  margin-left:-120%;
+  transition: all 1s;
+  z-index: 1000;
+}
+
+.menu ul
+{
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.menu ul li
+{
+  list-style: none;
+  padding: 7px;
+  border-bottom: 1px solid #000;
+}
+
+.menu ul li a
+{
+  text-decoration: none;
+  color: #000;
+}
+
+#btn-menu:checked ~ .menu
+{
+  margin: 0;
+}
+
+.Recomendados
+{
+  margin: 0 auto;
+  position: relative;
+  background:rgba(255, 255, 255, 0.1);
+  top: 130px;
+  width: 90%;
+  color: #66ffb3;
+}
+
+.Destacados
+{
+  margin: 0 auto;
+  position: relative;
+  background:rgba(255, 255, 255, 0.1);
+  top: 177px;
+  width: 90%;
+  color: #ff7733;
+}
+.MasVistos
+{
+  margin: 0 auto;
+  position: relative;
+  background:rgba(255, 255, 255, 0.1);
+  top: 214px;
+  width: 90%;
+  color: #ffff4d;
+}
+
+.r01, .r02, .r03, .r04, .r05, .d01, .d02, .d03, .d04, .d05, .m01, .m02, .m03, .m04, .m05
+{
+  border: 2px solid white;
+  margin: 27px;
+}
+section h2
+{
+  text-align: left;
+  position: relative;
+  left: 10px;
+  top: 10px;
+}
+
+
+
+
+iframe
+{
+  padding-top: 27px;
+  padding-left: 27px;
+}
+
+footer
+{
+  background: rgba(204, 255, 153, 0.7);
+  position: relative;
+  top: 250px;
+}
+
+footer img
+{
+  width: 27px;
+  height: 27px;
+  margin-right: 10px;
+}
+
+  @media only screen and(max-width: 500px) {
+     #registro {
+      margin-top: 36px;
+     } 
+  }
+
+/* Small Devices, Tablets */
+   @media only screen and (min-width : 768px) {
+     .r01, .r02, .r03, .r04, .r05, .d01, .d02, .d03, .d04, .d05, .m01, .m02, .m03, .m04, .m05
+     {
+      width: 40%;
+      float: left;
+      height: 300px;
+     }
+     .Recomendados, .MasVistos, .Destacados{
+       overflow: hidden;
+     }
+   }
+
+   /* Medium Devices, Laptop */
+    @media only screen and (min-width : 1024px) {
+
+      .register{
+        position: absolute;
+      }
+
+      .r01, .r02, .r03, .r04, .r05, .d01, .d02, .d03, .d04, .d05, .m01, .m02, .m03, .m04, .m05
+      {
+       width: 19%;
+       display: inline-block;
+       height: 300px;
+       text-align: center;
+      }
+      iframe
+      {
+        padding-top: 14px;
+        padding-left: 0;
+      }
+      header label
+      {
+        display: none;
+      }
+
+      .menu
+      {
+        margin-left: 0;
+        display: block;
+        transition: inherit;
+      }
+      .menu ul
+      {
+        overflow: hidden;
+        width: 50%;
+        margin: 0 auto;
+      }
+      .menu ul li
+      {
+
+        float: left;
+        width: 33%;
+        text-align: center;
+        border-bottom: 1px solid transparent;
+      }
+.login{
+  margin: 0 auto;
+    padding-top: 5%;
+    width: 10%;
+
+    width: 70%;
+}
+  .singin{
+    margin: 0 auto;
+    padding-top: 5%;
+  }
+        input[type="text"]{
+
+        width: 50%;
+        height: 40px;
+        font-size: 20px;
+        border-radius: 10px;
+        text-align: left;
+       
+        }
+      .submit{
+        font-size: 100%; 
+           width: 10%;
+           
+      }
+
+      .registro
+      {
+        float: none;
+        position: absolute;
+        width: 20%;
+        right: 0;
+        left: 127px;
+        margin-right: 7px;
+      }
+      .registro ul
+      {
+        overflow: hidden;
+
+      }
+      .registro ul li
+      {
+        float: left;
+        border-bottom: 1px solid transparent;
+        padding-right: 27px;
+      }
+      #logo
+      {
+        width: 10%;
+      }
+      img#imglogo
+      {
+        width: 30px;
+        margin-left: 7px;
+      }
+
+    }
