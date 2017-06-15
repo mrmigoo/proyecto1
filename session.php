@@ -2,6 +2,22 @@
 	require_once('util.php');
 	session_start();
 
+	if ($_POST) {
+		$user = dameUnoPorMail($_POST["usuario"]);
+
+		if ($user !== NULL ) {
+			if (password_verify($_POST["password"], $user["password"]) !== FALSE){ 
+				loguear($_POST["usuario"]);
+				redirect("tutall.php");
+			} else {
+				$error = "Password incorrecto";
+			}
+		} else {
+			$error = "Usuario no encontrado";
+		}
+		return $error;
+	}
+
 	if (!isset($_SESSION["usuario"]) && isset($_COOKIE["recordar_usu"])) {
 		loguear($_COOKIE["recordar_usu"]);
 	}

@@ -1,6 +1,7 @@
 <?php
 include
-'register.php'
+'register.php';
+
  ?>
 
 <!DOCTYPE html>
@@ -17,7 +18,7 @@ include
 
 	 <header>
     <div id="logo">
-      <a href="tutall.html">
+      <a href="tutall.php">
         <img src="img/logo_.png" width=200 id="imglogo">
       </a>
     </div>
@@ -28,19 +29,16 @@ include
 	
 
 		<div class="container-registro">
-			<form action="#" method="" class="form-registro">
+			<form action="formulario.php" method="POST" class="form-registro">
 				
 				<label for="nombre"></label> 
-					<input type="text" placeholder="Nombre" id="nombre" required /> 
+				<input type="text" name="name" id="name" placeholder="nombre" value="<?PHP 
+                            if (isset($errors["fullName"])) {
+                                echo $errors["fullName"];
+                            }
+                        ?>" maxlength="50" /><br/>
 				<br>
 				<br>
-
-				<label for="apellido"></label>
-					<input type="text" placeholder="Apellido" id="nombre" required /> 
-				<br>
-			
-				<br>
-				
 			
 					<select name="" id=""> 
 						<option value="Hombre">Hombre</option>
@@ -51,19 +49,31 @@ include
 				<br>
 				<br>
 				<label for="email"></label> 
-					<input type="text" name="email" placeholder="Email" id="email" required/> 
+					<input type="text" name="email" placeholder="Email" id="email" value="<?PHP 
+                            if (isset($errors["correo"])) {
+                                echo $errors["correo"];
+                            }
+                        ?>" required/> 
 				<br>
 				<br>
 				<label for="usuario"></label>
-					<input type="text" name="usuario" id="usuario" placeholder="Usuario"/>
+					<input type="text" name="username" id="usuario" placeholder="Usuario">
 				<br>
 				<br>
 				<label for="password"></label>
-					<input type="text" name="password" id="password" placeholder="Contraseña"/>
+					<input type="text" name="password" id="password" placeholder="Contraseña" value="<?PHP 
+                            if (isset($errors["password"])) {
+                                echo $errors["password"];
+                            }
+                        ?>"/>
 				<br>
 				<br>
 				<label for="password"> </label>
-					<input type="text" name="password" id="password" placeholder="Repetir Contraseña"/>
+					<input type="text" name="repass" id="password" placeholder="Repetir Contraseña" value="<?PHP 
+                            if (isset($errors["password"])) {
+                                echo $errors["password"];
+                            }
+                        ?>"/>
 				<br>
 				<br>
 

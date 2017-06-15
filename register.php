@@ -7,12 +7,13 @@
           // el usuario esta loggeado y esta intentando acceder al formulario de login!
           echo 'Chee, el usuario ya esta loggeado!';
         } else {
-          require('register_contents.php');
+     
         }
     }
 
     function handlePost() {
         $errors = verificarRegistro();
+        var_dump($errors);
 
         if (count($errors) == 0) {
             //insert con el nuevo usuario a la DB
@@ -25,25 +26,20 @@
                 "password" => password_hash(readPostParam('password'), PASSWORD_DEFAULT)
             ];
 
-            if (guardarImagen2('imageToUpload')) {
-                $usuarioJSON = json_encode($usuario).PHP_EOL;
+             $usuarioJSON = json_encode($usuario).PHP_EOL;
                 //ojo que tenga persmisos
                 file_put_contents("usuarios.json", $usuarioJSON, FILE_APPEND);
                 // echo 'Usuario creado';
                 // redirect a la pagina principal
                 loguear($usuario['email']);
                 redirect('/tutall.php');
-            } else {
-                // error al guardar imagen
-                // no deberia llegar nunca aca
-            }
-
 
         } else {
             //en este punto, hay errores en el formulario
-            require('register_contents.php');
+           return $errors;
             //var_dump($errors);
         }
+
     }
 
     function guardarImagen2($uploadName) {
@@ -104,17 +100,17 @@
             $errors['password'] = 'Las contraseñas no coinciden';
         }
 
-        if (!isValidImage('imageToUpload')) {
-            $errors['image'] = 'No se pudo subir la imagen';
-        }
+        //if (!isValidImage('imageToUpload')) {
+        //    $errors['image'] = 'No se pudo subir la imagen';
+        //}
 
         return $errors;
     }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        handlePost();
+       $errors = handlePost();
     } else if($_SERVER['REQUEST_METHOD'] === 'GET'){
-        handleGet();
+        $errors = handleGet();
     }
 
   //   function loguear($data){

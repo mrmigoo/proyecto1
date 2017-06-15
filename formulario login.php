@@ -14,17 +14,17 @@
 
 			<header>
 				  <div id="logo">
-      <a href="tutall.html">
+      <a href="tutall.php">
         <img src="img/logo_.png" width=100 id="imglogo">
       </a>
     </div>
 
 			</header>
 <div class="login">
-			<form class="form-registro">
+			<form class="form-registro" action="session.php" method="POST">
 				
 				<label for="usuario">:</label>
-					<input type="text" name="usuario" id="usuario" placeholder="Escribe tu Usuario"/>
+					<input type="text" name="usuario" id="usuario" placeholder="Escribe tu mail"/>
 				<br>
 				<br>
 				<label for="password">:</label>

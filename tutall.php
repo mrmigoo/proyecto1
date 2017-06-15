@@ -1,3 +1,17 @@
+<?php
+
+require_once 'session.php';
+if ($_POST) {
+  var_dump($_POST);
+}
+
+if (isset($_COOKIE)) {
+  var_dump($_COOKIE);
+}
+
+var_dump($_SESSION["usuario"]);
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -13,24 +27,34 @@
   <header>
  
     <div id="logo">
-      <a href="tutall.html">
+      <a href="tutall.php">
         <img src="img/logo_.png" width=200 id="imglogo">
       </a>
     </div>
-
+    
     <div class="registro">
       <ul>
+      <?php if (islogged() !== TRUE) { ?>
         <li>
-          <a href="formulario login.html">Iniciar Sesión</a>
+          <a href="formulario login.php">Iniciar Sesión</a>
         
         </li>
 
         <li>
-          <a class="register" href="formulario.html">Registrate</a>
+          <a class="register" href="formulario.php">Registrate</a>
      
         </li>
+      <?php } else { ?>
+      <li>
+        <p><?=$_SESSION["usuario"]?></p>
+      </li>
+      <li>
+        <a href="logout.php">Logout</a>
+      </li>
+      <?php } ?>
 
     </div>
+   
 
     <input type="checkbox" id="btn-menu">
     <label for="btn-menu"><img src="img/menu-icon.png" width=27px id="toggle"/></label>
@@ -38,7 +62,7 @@
     <nav class="menu">
         <ul>
   				<li>
-  					<a href="tutall.html">Inicio</a>
+  					<a href="tutall.php">Inicio</a>
   				</li>
 
   				<li>
